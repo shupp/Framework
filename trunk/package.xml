@@ -24,7 +24,7 @@
     </lead>
     <!-- Begin section which goes in changelog -->
     <date>2007-09-01</date>
-    <time>01:16:00</time>
+    <time>09:32:00</time>
     <version>
         <release>0.2.4.2</release>
         <api>0.2.4</api>
@@ -35,12 +35,12 @@
     </stability>
     <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
     <notes><![CDATA[
-    * SHUPP - added multi-db abstractions (not in Joe's svn), move from Pearified Smarty again (mistake?).  Customized package.xml as usual.
-    *
     * UNRELEASED CODE
+    * added multi-db abstractions
+    * switch back from Pearified Smarty again (mistake by ieure?).  (shupp)
     * Removed the try/catch block from Framework_Controller_Web::authenticate() - an exception at this level is an indication of a failure in the underlying code, not a failure to log in. (ieure, #43)
     * Add Framework_Session::__isset() (ieure, #44)
-    * Fix the check in Framework_User::singleton(), without which “Remember me” functionality cannot work. (ieure, #45)
+    * Fix the check in Framework_User::singleton(), without which "Remember me" functionality cannot work. (ieure, #45)
     * Clean up logging, add support for Firebug logging. (ieure, #49)
     * Clean up whitespace (ieure, #50)
     * Allow different encodings in RSS presenter (ieure, #51)
@@ -349,6 +349,9 @@
                 <channel>pear.php.net</channel>
                 <min>0.11.4</min>
             </package>
+            <extension>
+                <name>json</name>
+            </extension>
         </required>
     </dependencies>
     <phprelease />
