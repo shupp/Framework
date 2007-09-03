@@ -23,8 +23,8 @@
         <active>yes</active>
     </lead>
     <!-- Begin section which goes in changelog -->
-    <date>2007-09-01</date>
-    <time>09:32:00</time>
+    <date>2007-09-03</date>
+    <time>12:55:00</time>
     <version>
         <release>0.2.4.2</release>
         <api>0.2.4</api>
@@ -36,7 +36,8 @@
     <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
     <notes><![CDATA[
     * UNRELEASED CODE
-    * added multi-db abstractions
+    * added multi-db abstraction support. ADODBLite, DB, and None are supported.  (shupp)
+    * removed is_null($this->db) check in Framework_Object_Web::__construct() (shupp)
     * switch back from Pearified Smarty again (mistake by ieure?).  (shupp)
     * Removed the try/catch block from Framework_Controller_Web::authenticate() - an exception at this level is an indication of a failure in the underlying code, not a failure to log in. (ieure, #43)
     * Add Framework_Session::__isset() (ieure, #44)
