@@ -43,11 +43,11 @@ implements Framework_DB_Interface
     /**
      * stop 
      * 
-     * @param mixed $db 
+     * @param DB object $db 
      * @access private
      * @return void
      */
-    public function stop(&$db)
+    public function stop($db)
     {
         if ($db instanceof DB) {
             $db->disconnect();

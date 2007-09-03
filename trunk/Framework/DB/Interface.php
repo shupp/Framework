@@ -39,7 +39,7 @@ interface Framework_DB_Interface
      * @access public
      * @return void
      */
-    public function stop(&$db);
+    public function stop($db);
 }
 
 ?>

@@ -42,7 +42,7 @@ implements Framework_DB_Interface
      * @access private
      * @return void
      */
-    public function stop(&$db)
+    public function stop($db)
     {
         if (is_object($db)) {
             $db->Close();
