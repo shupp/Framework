@@ -15,8 +15,7 @@
 /**
  * Framework_DB_None
  *
- * All Framework_DB drivers must implement this so they all behave in
- * the same basic manner. 
+ * Driver to use when there will be no DB connection.
  *
  * @author      Bill Shupp <hostmaster@shupp.org
  * @package     Framework
