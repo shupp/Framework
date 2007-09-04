@@ -5,9 +5,10 @@
  *
  * Default Framework Database Driver
  *
- * @author Bill Shupp <hostmaster@shupp.org>
- * @license http://www.opensource.org/licenses/bsd-license.php
- * @package Framework
+ * @author      Bill Shupp <hostmaster@shupp.org>
+ * @license     http://www.opensource.org/licenses/bsd-license.php
+ * @package     Framework
+ * @subpackage  DB
  * @filesource
  */
 
