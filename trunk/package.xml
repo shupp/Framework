@@ -36,6 +36,7 @@
     <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
     <notes><![CDATA[
     * UNRELEASED CODE
+    * move driver Framework_DB to Framework_DB_DB (shupp)
     * added multi-db abstraction support. ADODBLite, DB, and None are supported.  (shupp)
     * removed is_null($this->db) check in Framework_Object_Web::__construct() (shupp)
     * switch back from Pearified Smarty again (mistake by ieure?).  (shupp)

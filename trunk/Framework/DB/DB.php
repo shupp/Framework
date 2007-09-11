@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Framework_DB
+ * Framework_DB_DB
  *
  * Default Framework Database Driver
  *
@@ -15,14 +15,14 @@
 require_once 'DB.php';
 
 /**
- * Framework_DB
+ * Framework_DB_DB
  *
- * Default Framework Database Driver.  Extends from PEAR_DB
+ * Default Framework Database Driver.  Uses PEAR's DB Package
  *
  * @author Bill Shupp <hostmaster@shupp.org>
  * @package Framework
  */
-class Framework_DB 
+class Framework_DB_DB
 implements Framework_DB_Interface
 {
     /**
