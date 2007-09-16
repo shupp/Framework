@@ -175,6 +175,9 @@
                           name="ADODBLite.php" 
                           role="php" />
                     <file baseinstalldir="/" 
+                          name="DB.php" 
+                          role="php" />
+                    <file baseinstalldir="/" 
                           name="Interface.php" 
                           role="php" />
                     <file baseinstalldir="/" 
@@ -261,9 +264,6 @@
                 </dir> 
                 <file baseinstalldir="/" 
                       name="Auth.php" 
-                      role="php" />
-                <file baseinstalldir="/" 
-                      name="DB.php" 
                       role="php" />
                 <file baseinstalldir="/" 
                       name="Controller.php" 
