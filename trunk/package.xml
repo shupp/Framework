@@ -23,8 +23,8 @@
         <active>yes</active>
     </lead>
     <!-- Begin section which goes in changelog -->
-    <date>2007-09-03</date>
-    <time>12:55:00</time>
+    <date>2007-09-15</date>
+    <time>18:48:00</time>
     <version>
         <release>0.2.4.2</release>
         <api>0.2.4</api>
