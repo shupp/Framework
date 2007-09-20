@@ -74,7 +74,7 @@ abstract class Framework_Plugin
      *
      * <code>
      * // Run the myHook plugin from within your module
-     * Framework::plugin('myHook',$this);
+     * Framework_Plugin::run('myHook',$this);
      * </code>
      *
      * @access public
