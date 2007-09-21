@@ -43,9 +43,9 @@ abstract class Framework_Object_DB extends Framework_Object
      * 
      * @static
      * @var mixed
-     * @access protected
+     * @access private
      */
-    static protected $dbDriver = null;
+    static private $dbDriver = null;
 
     /**
      * __construct
