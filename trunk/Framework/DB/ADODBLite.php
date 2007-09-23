@@ -12,6 +12,7 @@
  * @filesource
  */
 
+require_once 'adodb_lite/adodb-exceptions.inc.php';
 require_once 'adodb_lite/adodb.inc.php';
 
 /**
