@@ -36,6 +36,7 @@
     <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
     <notes><![CDATA[
     * UNRELEASED CODE
+    * framework_pager.tpl needs to use $nav->start, not $start
     * ADODBLite driver now includes adodb exception class
     * make $dbDriver private
     * fix wrong code example in Framework_Plugin

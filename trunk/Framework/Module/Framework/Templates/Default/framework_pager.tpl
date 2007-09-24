@@ -7,7 +7,7 @@
     <span class="prev disabled">&laquo; Prev</span>
 {/if}
 {foreach key=key item=val from=$nav->getPageList()}
-    {if $start == $val}
+    {if $nav->start == $val}
         <a class="page current" href="{$url}{$s}start={$val}">{$key}</a>
     {else}
         <a class="page" href="{$url}{$s}start={$val}">{$key}</a>
@@ -18,7 +18,7 @@
 {else}
     <span class="next disabled">Next &raquo;</span>
 {/if}
-{if $start < $nav->getEnd()}
+{if $nav->start < $nav->getEnd()}
     <a class="end" href="{$url}{$s}start={$nav->getEnd()}">&raquo;</a>
 {else}
     <span class="end disabled">&raquo;</span>
