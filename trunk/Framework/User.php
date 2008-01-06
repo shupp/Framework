@@ -166,14 +166,14 @@ class Framework_User extends Framework_Object_DB
 
             if (!is_null($file)) {
                 if (!include_once($file)) {
-                    return PEAR::raiseError('Could not load class file: ' . $file);
+                    throw new Framework_Exception('Could not load class file: ' . $file);
                 }
             }
 
             if (class_exists($class)) {
                 $user = new $class();
             } else {
-                return PEAR::raiseError('Unable to load class: ' . Framework::$site->userClass);
+                throw new Framework_Exception('Unable to load class: ' . Framework::$site->userClass);
             }
         }
 
