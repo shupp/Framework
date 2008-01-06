@@ -33,9 +33,10 @@ abstract class Framework_Template
      * where you will want to load it from.
      *
      * <code>
-     * $template = Framework_Template('Smarty', 'Blog');
-     * if (PEAR::isError($template)) {
-     *     echo $template->getMessage();
+     * try {
+     *     $template = Framework_Template::factory('Smarty', 'Blog');
+     * } catch (Framework_Exception $error) {
+     *     echo $error->getMessage();
      * }
      * </code>
      *
