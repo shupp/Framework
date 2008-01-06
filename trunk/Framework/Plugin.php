@@ -94,35 +94,31 @@ abstract class Framework_Plugin
      * Create a plugin
      *
      * <code>
-     * $plugin = Framework_Plugin::factory('Example');
-     * if (PEAR::isError($plugin)) {
-     *     echo $plugin->getMessage();
-     * } else {
+     * try {
+     *     $plugin = Framework_Plugin::factory('Example');
      *     Framework_Plugin::register($plugin);
+     * } catch (Framework_Plugin_Exception $error) {
+     *     echo $error->getMessage();
      * }
      * </code>
      *
      * @access public
      * @param string $plugin Name of plugin to load
-     * @return mixed object|PEAR_Error
+     * @return object Framework_Plugin object
      */
     static public function factory($plugin) {
         $file = 'Framework/Plugin/'.$plugin.'.php';
         if (!include_once($file)) {
-            return PEAR::raiseError('Plugin file not found: '.$file);
+            throw new Framework_Plugin_Exception('Plugin file not found: '.$file);
         }
 
         $class = 'Framework_Plugin_'.$plugin;
         if (!class_exists($class)) {
-            return PEAR::raiseError('Plugin class not found: '.$class);
+            throw new Framework_Plugin_Exception('Plugin class not found: '.$class);
         }
 
-        try {
-            $instance = new $class();
-            return $instance;
-        } catch (Framework_Exception $error) {
-            return PEAR::raiseError($error->getMessage());
-        }
+        $instance = new $class();
+        return $instance;
     }
 }
 
