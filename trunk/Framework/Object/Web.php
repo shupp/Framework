@@ -55,10 +55,7 @@ abstract class Framework_Object_Web extends Framework_Object_DB
     public function __construct()
     {
         parent::__construct();
-        if (!is_null($this->db)) {
-            $this->user = Framework_User::singleton();
-        }
-
+        $this->user = Framework_User::singleton();
         $this->session = Framework_Session::singleton();
     }
 }
