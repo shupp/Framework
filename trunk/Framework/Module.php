@@ -244,8 +244,8 @@ abstract class Framework_Module extends Framework_Object_Web
      * @param   string  $module  Module name
      * @param   string  $file    File the class is in
      * @param   string  $class   Class name of the module
-     * @return  mixed   Framework_Module instance on success,
-     *                  PEAR_Error otherwise.
+     * @throws  Framework_Exception on errors
+     * @return  object   Framework_Module instance on succes
      */
     public static function tryModule($module, $file, $class)
     {
@@ -277,8 +277,8 @@ abstract class Framework_Module extends Framework_Object_Web
      * @access      public
      * @param       object      $module         Module to load
      * @param       object      $request        Request to load
-     * @return      mixed       Framework module on success,
-     *                          PEAR_Error on failure
+     * @throws      Framework_Exception on errors
+     * @return      mixed       Framework module on success
      * @static
      */
     static public function start(Framework_Module &$module, $request)

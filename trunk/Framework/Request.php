@@ -30,7 +30,8 @@ abstract class Framework_Request
      *
      * @access      public
      * @param       string      $type
-     * @return      mixed       PEAR_Error on failure, request on success
+     * @throws      Framework_Exception
+     * @return      mixed       request on success
      */
     static public function factory($type)
     {
