@@ -40,6 +40,8 @@ class Framework_DB_ADODB extends Framework_DB_Common
      * Create a singleton of ADODB or ADODBLite;  This driver works for 
      * both.  Just specify the correct directory in 
      * config->db->options->adodbDir.
+     * The directory in which adodbDir resides in must be in your
+     * include_path.
      *
      * @access public
      * @throws Framework_DB_Exception on failure
@@ -55,17 +57,18 @@ class Framework_DB_ADODB extends Framework_DB_Common
         // Manually include files, ADODB does not follow naming conventions
         if (empty($this->options->adodbDir)) {
             throw new Framework_DB_Exception(
-                'Error: you must set $options->adodbDir'
+                'Error: you must set $config->db->options->adodbDir'
             );
         }
-        $path = (string)$this->options->adodbDir;
-        if (!include_once $path . PATH_SEPARATOR . 'adodb-exceptions.inc.php' ||
-            !include_once $path . PATH_SEPARATOR . 'adodb.inc.php') {
+        $path = (string)$this->options->adodbDir . DIRECTORY_SEPARATOR;
+        if ((!include_once $path . 'adodb-exceptions.inc.php') ||
+            (!include_once $path . 'adodb.inc.php')) {
             throw new Framework_DB_Exception(
                 'Error: could not include ADODB files'
             );
         }
 
+        // Connect
         try {
             parent::$db = ADONewConnection($this->dsn);
         } catch (Exception $error) {
@@ -77,9 +80,9 @@ class Framework_DB_ADODB extends Framework_DB_Common
         // Fetch Modes
         $fetchModes = array(
             'ADODB_FETCH_DEFAULT' => ADODB_FETCH_DEFAULT,
-            'ADODB_FETCH_NUM',    => ADODB_FETCH_NUM,
-            'ADODB_FETCH_ASSOC',  => ADODB_FETCH_ASSOC,
-            'ADODB_FETCH_BOTH',   => ADODB_FETCH_BOTH
+            'ADODB_FETCH_NUM'     => ADODB_FETCH_NUM,
+            'ADODB_FETCH_ASSOC'   => ADODB_FETCH_ASSOC,
+            'ADODB_FETCH_BOTH'    => ADODB_FETCH_BOTH
         );
 
         $fetchMode = ADODB_FETCH_ASSOC;
