@@ -34,7 +34,7 @@ abstract class Framework_DB
      * @static
      */
     static private $dbTypes = array(
-        'DB', 'MDB2'
+        'DB', 'MDB2', 'ADODB'
     );
 
     /**
