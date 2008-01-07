@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package packagerversion="1.6.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0                              http://pear.php.net/dtd/tasks-1.0.xsd                              http://pear.php.net/dtd/package-2.0                              http://pear.php.net/dtd/package-2.0.xsd">
  <name>Framework</name>
- <channel>pear.joestump.net</channel>
+ <channel>pear.merchbox.com</channel>
  <summary>Light weight MVC framework</summary>
  <description>Framework is a light weight MVC framework that includes a basic 
         controller, a few base modules, core classes for creating framework 
         modules and multiple presentation layers.</description>
  <lead>
-  <name>Joe Stump</name>
-  <user>jstump</user>
-  <email>jstump@php.net</email>
+  <name>Bill Shupp</name>
+  <user>shupp</user>
+  <email>hostmaster@shupp.org</email>
   <active>yes</active>
  </lead>
- <date>2007-11-11</date>
- <time>17:09:10</time>
+ <date>2008-01-06</date>
+ <time>17:15:00</time>
  <version>
-  <release>0.4.0</release>
-  <api>0.4.0</api>
+  <release>0.4.0.1</release>
+  <api>0.4.0.1</api>
  </version>
  <stability>
   <release>alpha</release>
   <api>alpha</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
- <notes>* Switched all PEAR::raiseError(), PEAR_Error, etc. to Framework_Exception. 
-* Default PEAR_Error handler now throws an appropriate Framework_Exception.
-* Added ability to use any DB abstraction layer you wish with initial support for DB and MDB2.
-* Added some initial tests for Framework code.
-* Set the default for Framework_Module::$tplFile to $module_$class_$event.tpl and similar.
-* Removed the try/catch block from Framework_Controller_Web::authenticate() - an exception at this level is an indication of a failure in the underlying code, not a failure to log in. (ieure, #43)
-* Add Framework_Session::__isset() (ieure, #44)
-* Fix the check in Framework_User::singleton(), without which “Remember me” functionality cannot work. (ieure, #45)
-* Clean up logging, add support for Firebug logging. (ieure, #49)
-* Clean up whitespace (ieure, #50)
-* Allow different encodings in RSS presenter (ieure, #51)
-* Split up Framework_Module::factory() (ieure, #52)
-* Add the JSON controller to package.xml
-* Make private members of Framework_Template_Smarty protected. (ieure, #54)</notes>
+ <notes>* Added ADODB DB Driver
+* Migrated Framework_User flexibility
+* Don't check in Framework_Object_Web for Framework::$db to be null before loading User class
+* Switch Framework_User to Exceptions
+* Switch Framework_Plugin to Exceptions, added Framework_Plugin_Exception class
+</notes>
  <contents>
   <dir name="/">
    <file baseinstalldir="doc/Framework" md5sum="d1d3cb412851054d189893ab2859d42e" name="docs/1_MVC-and-PHP5-Part-One-Foundation.html" role="doc" />
@@ -91,6 +83,7 @@
    <file baseinstalldir="/" md5sum="9923c10bf25f0e95f1fd2691f546bfb3" name="Framework/Controller/Web.php" role="php" />
    <file baseinstalldir="/" md5sum="82381e7e482021b0bf995acbed1660d1" name="Framework/Controller/REST.php" role="php" />
    <file baseinstalldir="/" md5sum="a520137ad909cec22cd2d31abffb7a49" name="Framework/Controller/JSON.php" role="php" />
+   <file baseinstalldir="/" md5sum="d9043d52850a377ceee8281b791c68f6" name="Framework/DB/ADODB.php" role="php" />
    <file baseinstalldir="/" md5sum="bda53f7c5c77d26d7e2d3701c464a96e" name="Framework/DB/Common.php" role="php" />
    <file baseinstalldir="/" md5sum="7b210238d3f9876b761f06c8ecc075db" name="Framework/DB/DB.php" role="php" />
    <file baseinstalldir="/" md5sum="12afe858120b3e4604887d7befbf46a9" name="Framework/DB/Exception.php" role="php" />
@@ -140,14 +133,8 @@
    </pearinstaller>
    <package>
     <name>Smarty</name>
-    <channel>pear.joestump.net</channel>
-    <min>2.6.16</min>
-   </package>
-   <package>
-    <name>Smarty</name>
-    <channel>pearified.com</channel>
-    <min>2.6.8</min>
-    <conflicts />
+    <channel>pear.merchbox.com</channel>
+    <min>2.6.18</min>
    </package>
    <package>
     <name>Validate</name>
