@@ -33,7 +33,7 @@ abstract class Framework_Auth_User extends Framework_Auth
      */
     public function authenticate()
     {
-        if ($this->user->isDefault() == false) {
+        if ($this->user->isDefault() == true) {
             throw new Framework_Exception('User must be logged in for this request', FRAMEWORK_ERROR_AUTH);
         }
     }
