@@ -154,7 +154,7 @@ class Framework_User extends Framework_Object_DB
         static $user = null;
         $session = Framework_Session::singleton();
 
-        if (is_null($user) {
+        if (is_null($user)) {
             if (!isset(Framework::$site->config->user->userClass)) {
                 $file = null;
                 $class = 'Framework_User';
